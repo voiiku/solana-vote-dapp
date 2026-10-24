@@ -1,0 +1,2641 @@
+{
+  "address": "",
+  "metadata": {
+    "name": "solana_vote_dapp",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "add_candidate",
+      "docs": [
+        "2. Add candidates to a poll"
+      ],
+      "discriminator": [
+        172,
+        34,
+        30,
+        247,
+        165,
+        210,
+        224,
+        164
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "poll"
+          ]
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "candidates",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "add_poll_allow_departments",
+      "docs": [
+        "4. Add departments to a poll's allowlist"
+      ],
+      "discriminator": [
+        66,
+        249,
+        209,
+        249,
+        131,
+        212,
+        78,
+        128
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "poll"
+          ]
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "departments",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "add_poll_allow_roles",
+      "docs": [
+        "6. Add roles to a poll's allowlist"
+      ],
+      "discriminator": [
+        88,
+        48,
+        7,
+        101,
+        223,
+        144,
+        0,
+        5
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "poll"
+          ]
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "roles",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "add_poll_banned_departments",
+      "docs": [
+        "8. Add departments to the blocklist"
+      ],
+      "discriminator": [
+        156,
+        127,
+        106,
+        135,
+        233,
+        231,
+        205,
+        174
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "poll"
+          ]
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "departments",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "add_poll_banned_roles",
+      "docs": [
+        "10. Add roles to the blocklist"
+      ],
+      "discriminator": [
+        215,
+        246,
+        11,
+        192,
+        61,
+        113,
+        8,
+        225
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "poll"
+          ]
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "roles",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_candidate",
+      "docs": [
+        "2. Create a candidate"
+      ],
+      "discriminator": [
+        60,
+        206,
+        192,
+        133,
+        16,
+        210,
+        22,
+        23
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "poll"
+          ]
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "candidate",
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "name",
+          "type": {
+            "array": [
+              "u8",
+              64
+            ]
+          }
+        },
+        {
+          "name": "pointer",
+          "type": {
+            "option": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_department",
+      "docs": [
+        "1. Create a department"
+      ],
+      "discriminator": [
+        251,
+        22,
+        216,
+        184,
+        233,
+        185,
+        58,
+        65
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "department",
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "department_name",
+          "type": {
+            "array": [
+              "u8",
+              64
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_employee",
+      "docs": [
+        "3. Create an employee"
+      ],
+      "discriminator": [
+        87,
+        175,
+        18,
+        124,
+        24,
+        81,
+        207,
+        40
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "employee_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  109,
+                  112,
+                  108,
+                  111,
+                  121,
+                  101,
+                  101,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "employee",
+          "writable": true
+        },
+        {
+          "name": "employee_main_role",
+          "writable": true
+        },
+        {
+          "name": "department",
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "employee_pubkey",
+          "type": "pubkey"
+        },
+        {
+          "name": "employee_name",
+          "type": {
+            "array": [
+              "u8",
+              64
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_poll",
+      "docs": [
+        "1. Create a poll"
+      ],
+      "discriminator": [
+        182,
+        171,
+        112,
+        238,
+        6,
+        219,
+        14,
+        110
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true
+        },
+        {
+          "name": "employee",
+          "docs": [
+            "Employee account associated with the creator.",
+            "Validated automatically during deserialization through constraints:",
+            "1. The employee's owner field must match the signer (prevents impersonation).",
+            "2. The employee must be active (active == true).",
+            "3. The employee must have permission to create polls (allow_create_poll == true)."
+          ]
+        },
+        {
+          "name": "employee_main_role",
+          "docs": [
+            "Department account associated with the creator. Used to retrieve the employee's level and check it against the global PollConfig settings.",
+            "Validated automatically during deserialization through constraints:",
+            "1. The employee's main_role_key field must match the public key of the supplied role account.",
+            "2. Do not validate the department level here because an employee may have a temporary level."
+          ]
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "front_poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "basic_poll_data",
+          "type": {
+            "defined": {
+              "name": "InitPoll"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_role",
+      "docs": [
+        "2. Create a role within a department"
+      ],
+      "discriminator": [
+        170,
+        147,
+        127,
+        223,
+        222,
+        112,
+        205,
+        163
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "department",
+          "docs": [
+            "1. Verify that the department exists.",
+            "Seeds must match [b\"department\", v1, [u8; 64]]."
+          ]
+        },
+        {
+          "name": "role",
+          "docs": [
+            "2. Create the role account.",
+            "Seeds must match [b\"role\", v1, [u8; 64], [u8; 64]]."
+          ],
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "role_name",
+          "type": {
+            "array": [
+              "u8",
+              64
+            ]
+          }
+        },
+        {
+          "name": "role_level",
+          "type": "u8"
+        },
+        {
+          "name": "department_name",
+          "type": {
+            "array": [
+              "u8",
+              64
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "init_employee_config",
+      "docs": [
+        "2. Initialize the global employee configuration PDA. It currently provides the maximum ID used to create employees."
+      ],
+      "discriminator": [
+        206,
+        190,
+        6,
+        23,
+        79,
+        195,
+        59,
+        71
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "employee_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  109,
+                  112,
+                  108,
+                  111,
+                  121,
+                  101,
+                  101,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "init_poll_config",
+      "docs": [
+        "1. Initialize the global poll settings. Provides the maximum ID for creating polls and configures global poll settings."
+      ],
+      "discriminator": [
+        80,
+        203,
+        16,
+        25,
+        164,
+        200,
+        214,
+        60
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "remove_candidate",
+      "docs": [
+        "3. Remove candidates from a poll"
+      ],
+      "discriminator": [
+        80,
+        165,
+        143,
+        198,
+        253,
+        168,
+        82,
+        254
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "poll"
+          ]
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "candidates",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "remove_poll_allow_departments",
+      "docs": [
+        "5. Remove departments from a poll's allowlist"
+      ],
+      "discriminator": [
+        211,
+        101,
+        208,
+        246,
+        177,
+        23,
+        12,
+        76
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "poll"
+          ]
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "departments",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "remove_poll_allow_roles",
+      "docs": [
+        "7. Remove roles from a poll's allowlist"
+      ],
+      "discriminator": [
+        76,
+        158,
+        151,
+        90,
+        25,
+        189,
+        52,
+        56
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "poll"
+          ]
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "roles",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "remove_poll_banned_departments",
+      "docs": [
+        "9. Remove departments from the blocklist"
+      ],
+      "discriminator": [
+        100,
+        108,
+        41,
+        25,
+        184,
+        239,
+        24,
+        188
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "poll"
+          ]
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "departments",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "remove_poll_banned_roles",
+      "docs": [
+        "11. Remove roles from the blocklist"
+      ],
+      "discriminator": [
+        249,
+        151,
+        198,
+        49,
+        40,
+        172,
+        174,
+        17
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "poll"
+          ]
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "roles",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_poll_normal",
+      "docs": [
+        "1. General configuration management"
+      ],
+      "discriminator": [
+        98,
+        52,
+        254,
+        193,
+        201,
+        239,
+        172,
+        68
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "poll"
+          ]
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "SetPollNormalParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "try_update_poll_status",
+      "docs": [
+        "13. Attempt to update the poll status without returning an error"
+      ],
+      "discriminator": [
+        0,
+        150,
+        77,
+        140,
+        91,
+        165,
+        75,
+        25
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "poll"
+          ]
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "poll_id",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "update_department",
+      "docs": [
+        "1. Administer department settings"
+      ],
+      "discriminator": [
+        88,
+        61,
+        62,
+        115,
+        173,
+        237,
+        209,
+        171
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "department",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "department_name",
+          "type": {
+            "array": [
+              "u8",
+              64
+            ]
+          }
+        },
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "UpdateDepartmentParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "update_employee",
+      "docs": [
+        "3. Administer employee settings"
+      ],
+      "discriminator": [
+        73,
+        4,
+        138,
+        145,
+        85,
+        224,
+        29,
+        186
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "employee",
+          "writable": true
+        },
+        {
+          "name": "old_role",
+          "writable": true,
+          "optional": true
+        },
+        {
+          "name": "new_role",
+          "writable": true,
+          "optional": true
+        },
+        {
+          "name": "old_department",
+          "writable": true,
+          "optional": true
+        },
+        {
+          "name": "new_department",
+          "writable": true,
+          "optional": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "employee_id",
+          "type": "u64"
+        },
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "UpdateEmployeeParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "update_poll_config",
+      "docs": [
+        "1. Configure global poll settings"
+      ],
+      "discriminator": [
+        111,
+        186,
+        109,
+        232,
+        67,
+        215,
+        122,
+        135
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "signer": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "UpdatePollConfigParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "update_poll_status",
+      "docs": [
+        "12. Attempt to set the poll status to Ready; the status is adjusted according to the applicable rules. This is a valid update attempt only when is_ready is true."
+      ],
+      "discriminator": [
+        198,
+        125,
+        4,
+        193,
+        177,
+        29,
+        154,
+        252
+      ],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "poll"
+          ]
+        },
+        {
+          "name": "poll",
+          "writable": true
+        },
+        {
+          "name": "poll_config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "is_ready",
+          "type": {
+            "option": "bool"
+          }
+        }
+      ]
+    },
+    {
+      "name": "update_role",
+      "docs": [
+        "2. Administer role settings"
+      ],
+      "discriminator": [
+        36,
+        223,
+        162,
+        98,
+        168,
+        209,
+        75,
+        151
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "role",
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "role_name",
+          "type": {
+            "array": [
+              "u8",
+              64
+            ]
+          }
+        },
+        {
+          "name": "department_name",
+          "type": {
+            "array": [
+              "u8",
+              64
+            ]
+          }
+        },
+        {
+          "name": "params",
+          "type": {
+            "defined": {
+              "name": "UpdateRoleParams"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "vote",
+      "docs": [
+        "14. Cast a vote"
+      ],
+      "discriminator": [
+        227,
+        110,
+        155,
+        23,
+        136,
+        126,
+        172,
+        25
+      ],
+      "accounts": [
+        {
+          "name": "voter",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "employee",
+          "docs": [
+            "1. Employee account: entry point, located by employee_id."
+          ]
+        },
+        {
+          "name": "role",
+          "docs": [
+            "2. Role account:",
+            "A. The address constraint enforces a match with the employee record's main_role_key.",
+            "B. The seeds constraint ensures this is a valid PDA derived from role_name + department_name."
+          ]
+        },
+        {
+          "name": "department",
+          "docs": [
+            "3. Department account:",
+            "Seeds are derived from the department_name stored in the Role account."
+          ]
+        },
+        {
+          "name": "poll_config",
+          "docs": [
+            "4. Global poll configuration"
+          ],
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  108,
+                  108,
+                  95,
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              },
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  49
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "poll",
+          "docs": [
+            "5. Poll PDA"
+          ],
+          "writable": true
+        },
+        {
+          "name": "vote_stub",
+          "docs": [
+            "6. Vote stub (initialized)"
+          ],
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "employee_id",
+          "type": "u64"
+        },
+        {
+          "name": "poll_id",
+          "type": "u64"
+        },
+        {
+          "name": "choices",
+          "type": {
+            "vec": "pubkey"
+          }
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Candidate",
+      "discriminator": [
+        86,
+        69,
+        250,
+        96,
+        193,
+        10,
+        222,
+        123
+      ]
+    },
+    {
+      "name": "Department",
+      "discriminator": [
+        37,
+        241,
+        253,
+        218,
+        85,
+        156,
+        62,
+        139
+      ]
+    },
+    {
+      "name": "Employee",
+      "discriminator": [
+        98,
+        238,
+        61,
+        252,
+        130,
+        77,
+        105,
+        67
+      ]
+    },
+    {
+      "name": "EmployeeConfig",
+      "discriminator": [
+        6,
+        17,
+        135,
+        209,
+        58,
+        247,
+        43,
+        73
+      ]
+    },
+    {
+      "name": "Poll",
+      "discriminator": [
+        110,
+        234,
+        167,
+        188,
+        231,
+        136,
+        153,
+        111
+      ]
+    },
+    {
+      "name": "PollConfig",
+      "discriminator": [
+        6,
+        98,
+        208,
+        250,
+        192,
+        188,
+        11,
+        225
+      ]
+    },
+    {
+      "name": "Role",
+      "discriminator": [
+        46,
+        219,
+        197,
+        24,
+        233,
+        249,
+        253,
+        154
+      ]
+    },
+    {
+      "name": "VoteStub",
+      "discriminator": [
+        181,
+        244,
+        72,
+        10,
+        85,
+        245,
+        151,
+        5
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "NameTooLong",
+      "msg": "Name is too long: the maximum length is 32 bytes."
+    },
+    {
+      "code": 6001,
+      "name": "TooManyParameters",
+      "msg": "Too many arguments."
+    },
+    {
+      "code": 6002,
+      "name": "TooManyVecItem",
+      "msg": "Too many arguments: a single transaction can process at most 20 vector elements."
+    },
+    {
+      "code": 6003,
+      "name": "CanNotBeEmpty",
+      "msg": "Arguments cannot be empty or zero-length dynamic values."
+    },
+    {
+      "code": 6004,
+      "name": "LevelError",
+      "msg": "Invalid permission level: values must be 0–31, and the minimum level cannot exceed the maximum (if specified)."
+    },
+    {
+      "code": 6005,
+      "name": "EmployeeIDError",
+      "msg": "Invalid or out-of-sync employee ID."
+    },
+    {
+      "code": 6006,
+      "name": "DepartmentNotFound",
+      "msg": "Department does not exist."
+    },
+    {
+      "code": 6007,
+      "name": "RoleNotFound",
+      "msg": "Role does not exist."
+    },
+    {
+      "code": 6008,
+      "name": "EmployeeNotFound",
+      "msg": "Employee does not exist."
+    },
+    {
+      "code": 6009,
+      "name": "AddressMismatchError",
+      "msg": "Multiple arguments that should resolve to the same address do not match. Check the client logic."
+    },
+    {
+      "code": 6010,
+      "name": "ChangeRoleError",
+      "msg": "Invalid role change: the old and new roles must differ."
+    },
+    {
+      "code": 6011,
+      "name": "IllegalPollIntervalTime",
+      "msg": "Invalid poll duration."
+    },
+    {
+      "code": 6012,
+      "name": "StringTooLong",
+      "msg": "String is too long: the maximum length is 64 bytes."
+    },
+    {
+      "code": 6013,
+      "name": "MultipleChoicesError",
+      "msg": "The number of choices must be between 1 and 20."
+    },
+    {
+      "code": 6014,
+      "name": "IllegalTimeStamp",
+      "msg": "Invalid timestamps: the start time must be before the end time and cannot be in the past."
+    },
+    {
+      "code": 6015,
+      "name": "TooShortInterval",
+      "msg": "Poll duration cannot be shorter than min_polling_interval in PollConfig, which is configured by an administrator."
+    },
+    {
+      "code": 6016,
+      "name": "TooLongInterval",
+      "msg": "Poll duration cannot exceed max_polling_interval in PollConfig, which is configured by an administrator."
+    },
+    {
+      "code": 6017,
+      "name": "PollStatusUpdateError",
+      "msg": "Invalid poll status update: Draft can be changed to Ready only when is_ready is Some(true)."
+    },
+    {
+      "code": 6018,
+      "name": "MutexVec",
+      "msg": "Allowlist/blocklist conflict: the same entry cannot appear in both lists."
+    },
+    {
+      "code": 6019,
+      "name": "CandidateNotFound",
+      "msg": "Candidate not found."
+    },
+    {
+      "code": 6020,
+      "name": "ShouldBeEqParameters",
+      "msg": "Invalid arguments: the two supplied values must match."
+    },
+    {
+      "code": 6021,
+      "name": "DuplicateChoicesError",
+      "msg": "Invalid arguments: the same candidate cannot be selected more than once."
+    }
+  ],
+  "types": [
+    {
+      "name": "Candidate",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "poll",
+            "type": "pubkey"
+          },
+          {
+            "name": "candidate_name",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "candidate_count",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "pointer",
+            "type": {
+              "option": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Department",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "department_name",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "members",
+            "type": "u32"
+          },
+          {
+            "name": "allow_create_poll",
+            "type": "bool"
+          },
+          {
+            "name": "allow_vote",
+            "type": "bool"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Employee",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "employee_id",
+            "type": "u64"
+          },
+          {
+            "name": "name",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "active",
+            "type": "bool"
+          },
+          {
+            "name": "allow_create_poll",
+            "type": "bool"
+          },
+          {
+            "name": "allow_vote",
+            "type": "bool"
+          },
+          {
+            "name": "temp_level",
+            "type": {
+              "option": "u8"
+            }
+          },
+          {
+            "name": "main_role_key",
+            "type": "pubkey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EmployeeConfig",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "global_employee_id",
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "InitPoll",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "title",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "simple_description",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "detail_link",
+            "type": {
+              "option": {
+                "array": [
+                  "u8",
+                  64
+                ]
+              }
+            }
+          },
+          {
+            "name": "min_level",
+            "type": "u8"
+          },
+          {
+            "name": "max_level",
+            "type": "u8"
+          },
+          {
+            "name": "max_multiple_choices",
+            "type": "u8"
+          },
+          {
+            "name": "start_at",
+            "type": "i64"
+          },
+          {
+            "name": "end_at",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Poll",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "poll_id",
+            "type": "u64"
+          },
+          {
+            "name": "creator",
+            "type": "pubkey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "create_time",
+            "type": "i64"
+          },
+          {
+            "name": "title",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "simple_description",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "detail_link",
+            "type": {
+              "option": {
+                "array": [
+                  "u8",
+                  64
+                ]
+              }
+            }
+          },
+          {
+            "name": "total_votes",
+            "type": "u64"
+          },
+          {
+            "name": "min_level",
+            "type": "u8"
+          },
+          {
+            "name": "max_level",
+            "type": "u8"
+          },
+          {
+            "name": "allowed_departments",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "banned_departments",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "allowed_roles",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "banned_roles",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "max_multiple_choices",
+            "type": "u8"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "PollStatus"
+              }
+            }
+          },
+          {
+            "name": "is_wrong_poll",
+            "type": "bool"
+          },
+          {
+            "name": "candidates",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "start_at",
+            "type": "i64"
+          },
+          {
+            "name": "end_at",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PollConfig",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "total_polls",
+            "type": "u64"
+          },
+          {
+            "name": "allow_create_poll",
+            "type": "bool"
+          },
+          {
+            "name": "min_polling_interval",
+            "type": "i64"
+          },
+          {
+            "name": "max_polling_interval",
+            "type": "i64"
+          },
+          {
+            "name": "min_allow_create_poll",
+            "type": "u8"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PollStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Draft"
+          },
+          {
+            "name": "Ready"
+          },
+          {
+            "name": "Closed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Role",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "role_name",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "role_level",
+            "type": "u8"
+          },
+          {
+            "name": "members",
+            "type": "u32"
+          },
+          {
+            "name": "allow_create_poll",
+            "type": "bool"
+          },
+          {
+            "name": "allow_vote",
+            "type": "bool"
+          },
+          {
+            "name": "department_name",
+            "type": {
+              "array": [
+                "u8",
+                64
+              ]
+            }
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetPollNormalParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "title",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "simple_description",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "detail_link",
+            "type": {
+              "option": "string"
+            }
+          },
+          {
+            "name": "min_level",
+            "type": {
+              "option": "u8"
+            }
+          },
+          {
+            "name": "max_level",
+            "type": {
+              "option": "u8"
+            }
+          },
+          {
+            "name": "max_multiple_choices",
+            "type": {
+              "option": "u8"
+            }
+          },
+          {
+            "name": "is_wrong_poll",
+            "type": {
+              "option": "bool"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "UpdateDepartmentParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "allow_create_poll",
+            "type": {
+              "option": "bool"
+            }
+          },
+          {
+            "name": "allow_vote",
+            "type": {
+              "option": "bool"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "UpdateEmployeeParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "name",
+            "type": {
+              "option": {
+                "array": [
+                  "u8",
+                  64
+                ]
+              }
+            }
+          },
+          {
+            "name": "active",
+            "type": {
+              "option": "bool"
+            }
+          },
+          {
+            "name": "allow_create_poll",
+            "type": {
+              "option": "bool"
+            }
+          },
+          {
+            "name": "allow_vote",
+            "type": {
+              "option": "bool"
+            }
+          },
+          {
+            "name": "temp_level",
+            "type": {
+              "option": "u8"
+            }
+          },
+          {
+            "name": "main_role_key",
+            "type": {
+              "option": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "UpdatePollConfigParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "allow_create_poll",
+            "type": {
+              "option": "bool"
+            }
+          },
+          {
+            "name": "min_polling_interval",
+            "type": {
+              "option": "i64"
+            }
+          },
+          {
+            "name": "max_polling_interval",
+            "type": {
+              "option": "i64"
+            }
+          },
+          {
+            "name": "min_allow_create_poll",
+            "type": {
+              "option": "u8"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "UpdateRoleParams",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "role_level",
+            "type": {
+              "option": "u8"
+            }
+          },
+          {
+            "name": "allow_create_poll",
+            "type": {
+              "option": "bool"
+            }
+          },
+          {
+            "name": "allow_vote",
+            "type": {
+              "option": "bool"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "VoteStub",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "poll_id",
+            "type": "u64"
+          },
+          {
+            "name": "voter",
+            "type": "pubkey"
+          },
+          {
+            "name": "slot",
+            "type": "u64"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          },
+          {
+            "name": "choices",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ]
+}

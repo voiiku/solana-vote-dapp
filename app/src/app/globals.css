@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* Custom global styles */
+body {
+  background-color: #f9fafb; /* bg-gray-50 */
+}
+
+/* Add additional global styles here */
