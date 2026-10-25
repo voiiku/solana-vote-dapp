@@ -1,6 +1,6 @@
 # Solana Vote DApp
 
-[English](/docs/README/README-en_us.md) | **[简体中文]**
+[English](../../README.md) | **[简体中文]**
 
 > **项目说明**
 >
