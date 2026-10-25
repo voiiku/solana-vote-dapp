@@ -1,0 +1,11 @@
+* text=auto eol=lf
+*.md text eol=lf
+*.rs text eol=lf
+*.toml text eol=lf
+*.json text eol=lf
+*.lock text eol=lf
+
+*.hbs linguist-generated=true
+*.tsbuildinfo linguist-generated=true
+app/APP-THIRD-PARTY-NOTICES.html linguist-generated=true
+programs/PROGRAM-THIRD-PARTY-NOTICES.html linguist-generated=true

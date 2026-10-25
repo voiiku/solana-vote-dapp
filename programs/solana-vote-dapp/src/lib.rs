@@ -23,7 +23,8 @@ pub use state::vote::vote::*;
 /// containing a #[derive(Accounts)] type must be publicly re-exported.
 pub use state::*;
 
-declare_id!("");
+// Placeholder program ID for local compilation and tests; replace before deployment.
+declare_id!("11111111111111111111111111111111");
 
 // This program address exposes the actual instructions for external interaction.
 // This is the wrapper layer.
@@ -69,8 +70,8 @@ pub mod solana_vote_dapp {
     /// 2. Create a role within a department.
     pub fn create_role(
         ctx: Context<CreateRole>,
-        role_name: [u8; 64],       // Role name; names may repeat across departments.
-        role_level: u8,            // Role level.
+        role_name: [u8; 64], // Role name; names may repeat across departments.
+        role_level: u8,      // Role level.
         department_name: [u8; 64], // Department name.
     ) -> Result<()> {
         instructions::organizations::role::create_role(ctx, role_name, role_level, department_name)
@@ -87,7 +88,7 @@ pub mod solana_vote_dapp {
     /// 1. Configure a department.
     pub fn update_department(
         ctx: Context<UpdateDepartment>,
-        department_name: [u8; 64],      // Department name supplied by the client.
+        department_name: [u8; 64], // Department name supplied by the client.
         params: UpdateDepartmentParams, // Optional department update parameters supplied by the client.
     ) -> Result<()> {
         instructions::manage::department_manage::update_department(ctx, department_name, params)

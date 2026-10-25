@@ -1,10 +1,10 @@
 # Solana Vote DApp
 
-**[English]** | [简体中文](docs/README/README-zh_cn.md)
+**[English]** | [简体中文](/docs/README/README-zh_cn.md)
 
 > **About this project**
 >
-> This project is an Anchor-based Solana voting program that models an enterprise voting system, with a companion Next.js frontend prototype.
+> This project is a Solana on-chain program developed using Anchor that simulates a corporate voting scenario. It includes a corresponding Next.js frontend prototype.
 >
 > **This project is for learning and demonstrating on-chain voting only. It is not guaranteed to be secure.**
 
@@ -19,10 +19,10 @@ Key features:
 
 The project has two main parts:
 
-| Directory             | Description                          |
-| --------------------- | ------------------------------------ |
-| `programs/vote-dapp/` | Anchor on-chain program (Rust)       |
-| `app/`                | Companion Next.js frontend prototype |
+| Directory             | Description        |
+| --------------------- | ------------------ |
+| `programs/vote-dapp/` | on-chain program   |
+| `app/`                | frontend prototype |
 
 ## 2. Required versions
 
@@ -38,7 +38,7 @@ The project has two main parts:
 
 ## 4. License
 
-There is currently no `LICENSE` file in the repository root. The root `package.json` is still marked as ISC, while the on-chain program and frontend packages do not declare a consistent license. The frontend dependency tree also includes third-party dependencies that restrict redistribution. Do not label the entire project as GPL until these dependencies have been reviewed and addressed. Before reusing or publishing the code, verify the licensing terms for all code, dependencies, and assets, then choose and add an appropriate license.
+This project is licensed under the [MIT License](LICENSE). Third-party dependencies retain their own licenses; see the [program](programs/PROGRAM-THIRD-PARTY-NOTICES.html) and [frontend](app/APP-THIRD-PARTY-NOTICES.html) notices.
 
 ## 5. Related documentation
 

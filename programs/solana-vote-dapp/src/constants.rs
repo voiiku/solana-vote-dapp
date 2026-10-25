@@ -9,7 +9,8 @@ Seed rules:
 */
 /// Length of the discriminator in Anchor account data (8 bytes).
 pub const ANCHOR_DISC_LEN: usize = 8;
-pub const ADMIN_PUBKEY: Pubkey = pubkey!("");
+// Placeholder administrator key for local compilation and tests; replace before deployment.
+pub const ADMIN_PUBKEY: Pubkey = pubkey!("11111111111111111111111111111111");
 
 // Seed version identifier: separates implementation versions (use v2 for upgrades to isolate existing data).
 pub const SEED_VERSION: &[u8] = b"v1";
